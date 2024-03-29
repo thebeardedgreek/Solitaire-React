@@ -1,0 +1,113 @@
+/* Board.scss */
+
+.board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #35654d; /* Light green background color */
+    padding: 20px; /* Add padding for better visual spacing */
+}
+
+.foundation-piles {
+    display: inherit;
+    justify-content: space-between; /* Adjusted spacing between Foundation piles */
+    margin-bottom: 20px;
+}
+
+.tableau-stock {
+    display: flex;
+    align-items: flex-start;
+    margin: 150px 0px 400px 40px; /* Added margin to top of Tableau section */
+}
+
+.tableau {
+    display: flex;
+    margin-right: 20px;
+}
+
+.stock {
+    display: flex;
+    flex-direction: column;
+    margin-top: -80px;
+}
+
+.stock-pile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.card {
+    width: 100px;
+    height: 150px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.card.hearts:not(.face-down),
+.card.diamonds:not(.face-down) {
+    color: red; /* Red text for heart and diamond suits */
+}
+
+.card.spades:not(.face-down),
+.card.clubs:not(.face-down) {
+    color: black; /* Black text for spade and club suits */
+}
+
+
+/* Adjust size of Foundation piles */
+.foundation-piles > .foundation {
+    width: 100px; /* Remove fixed width */
+    height: 150px; /* Remove fixed height */
+    margin-right: 20px;
+}
+
+/* Remove bottom margin for last Foundation pile */
+.foundation-piles > .foundation:last-child {
+    //margin-right: 0;
+}
+
+/* Ensure only top card is visible in stock pile */
+.stock-pile > .card:not(:last-child) {
+    display: none;
+}
+
+.face-down {
+    position: relative;
+    background: linear-gradient(95deg, #0033fc, #ff1900);
+    color: transparent;
+    overflow: hidden; /* Ensure the pseudo-elements don't overflow */
+}
+
+.face-down::before,
+.face-down::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.2) 70%, transparent 100%);
+    animation: flow 20s infinite linear; /* Apply the animation */
+}
+
+.face-down::before {
+    left: -50%; /* Position the first pseudo-element off-screen */
+    transform: rotate(45deg); /* Rotate the pseudo-element */
+}
+
+.face-down::after {
+    right: -50%; /* Position the second pseudo-element off-screen */
+    transform: rotate(-45deg); /* Rotate the pseudo-element */
+}
+
+@keyframes flow {
+    0% {
+        transform: translateX(-140%);
+    }
+
+    100% {
+        transform: translateX(140%);
+    }
+}

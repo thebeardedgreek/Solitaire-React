@@ -1,0 +1,9 @@
+// Stack.scss
+.stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.stack .card {
+    margin-top: -120px; /* Overlap cards */
+}

@@ -1,0 +1,17 @@
+/* Foundation.scss */
+
+.foundation {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    //border: 1px solid #000;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
+}
+
+.foundation-symbol {
+    font-size: 6em; /* Adjust font size as needed */
+    color: rgba(0, 0, 0, 0.3); /* Opaque color for symbols */
+    margin-left: auto; /* Automatically center the symbol horizontally */
+    margin-right: auto; /* Automatically center the symbol horizontally */
+}

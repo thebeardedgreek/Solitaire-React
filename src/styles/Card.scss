@@ -1,0 +1,29 @@
+/* Card.scss */
+
+.card {
+    width: 100px;
+    height: 150px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px; /* Ensure consistent padding */
+    text-align: center;
+    background-color: #fff;
+    color: inherit;
+    position: relative;
+    font-family: Arial, sans-serif;
+    margin-right: 20px; /* Ensure consistent margin */
+}
+
+.card span {
+    display: block;
+}
+
+.value {
+    font-size: 24px;
+}
+
+.suit {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
